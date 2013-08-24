@@ -7,7 +7,7 @@ public class workerHandler : MonoBehaviour {
     public tubeMessage.messageColor answerColor;
     public tubeMessage currMessage;
     public SpeechOverlaySelector speechBubble;
-
+ 
     float timer = 0;
     public float ExclamationDelay = 1.0f;
     public float dotsDelay = 1.0f;
@@ -17,7 +17,7 @@ public class workerHandler : MonoBehaviour {
    
     // Use this for initialization
 	void Start () {
-	
+    
 	}
 	
 	// Update is called once per frame

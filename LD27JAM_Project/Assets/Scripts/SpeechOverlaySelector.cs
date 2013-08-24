@@ -7,11 +7,11 @@ public class SpeechOverlaySelector : MonoBehaviour {
    
     Vector2 currOffset = Vector2.zero;
     Vector2 nextOffset = Vector2.zero;
-
+    public readonly Vector2 texScale = new Vector2(0.25f, 0.5f);
     public bool switching;
     
     void Start () {
-	
+        renderer.material.mainTextureScale = texScale;
 	}
 	
 	// Update is called once per frame
