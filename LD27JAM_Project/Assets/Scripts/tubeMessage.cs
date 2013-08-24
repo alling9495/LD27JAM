@@ -4,9 +4,9 @@ using System.Collections.Generic;
 public class tubeMessage{
 
     public enum messageColor { red, green, orange, blue, rg, go, ob, br } // Colors avalible to the tubes. 
-    private List<messageColor> colorList = new List<messageColor>(3);
-    public int deskNum = 5;
-    private int stamps = 0;
+    private List<messageColor> colorList = new List<messageColor>(3); //Max: 3 Colors
+    public int deskNum = 5; //Desknum for tracking
+    private int stamps = 0; //Stamps 
     private float time = 10;
     // Use this for initialization
 

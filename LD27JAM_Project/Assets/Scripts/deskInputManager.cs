@@ -1,17 +1,23 @@
 using UnityEngine;
 using System.Collections;
 
+/*deskInputManager
+ *  Handles input for moving messages through the pipes. unsure of performance, make sure to check.
+ *  Keycodes are public, so easy to change. 
+ * 
+*/
+
 public class deskInputManager : MonoBehaviour {
-    public KeyCode desk1;
-    public KeyCode desk2;
-    public KeyCode desk3;
-    public KeyCode desk4;
-    public KeyCode desk5;
-    public KeyCode desk6;
-    public KeyCode desk7;
-    public KeyCode desk8;
-    public KeyCode desk9;
-    public KeyCode exitPipe;
+    public KeyCode desk1 = KeyCode.Keypad1;
+    public KeyCode desk2 = KeyCode.Keypad2;
+    public KeyCode desk3 = KeyCode.Keypad3;
+    public KeyCode desk4 = KeyCode.Keypad4;
+    public KeyCode desk5 = KeyCode.Keypad5;
+    public KeyCode desk6 = KeyCode.Keypad6;
+    public KeyCode desk7 = KeyCode.Keypad7;
+    public KeyCode desk8 = KeyCode.Keypad8;
+    public KeyCode desk9 = KeyCode.Keypad9;
+    public KeyCode exitPipe = KeyCode.Keypad0;
     public tubeManager manager;
     private int firstPress = -1;
     private int secondPress = -1;
@@ -23,7 +29,7 @@ public class deskInputManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
    
-        if (firstPress == -1)
+        if (firstPress == -1 && firstPress != 10)
         {
             firstPress = getDeskKey();
         }
@@ -38,7 +44,7 @@ public class deskInputManager : MonoBehaviour {
             secondPress = -1;
         }
 	}
-    int getDeskKey()
+    int getDeskKey() //Simple function to return desk #
     {
         if(Input.GetKeyDown(desk1))
         {
