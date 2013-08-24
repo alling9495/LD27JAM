@@ -7,4 +7,5 @@ Library/*
 *.userprefs
 Temp
 *.pidb
+*.v11
 Build
