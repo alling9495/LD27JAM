@@ -7,6 +7,7 @@ public class workerHandler : MonoBehaviour {
     public tubeMessage.messageColor answerColor;
     public tubeMessage currMessage;
     public SpeechOverlaySelector speechBubble;
+    public messageIndicatorHandler msgHandler;
  
     float timer = 0;
     public float ExclamationDelay = 1.0f;
@@ -27,10 +28,12 @@ public class workerHandler : MonoBehaviour {
             if (timer < ExclamationDelay)
             {
                 timer += Time.deltaTime;
+                msgHandler.active = false;
             }
             else
             {
                 timer = 0;
+                msgHandler.active = true;
                 currState = state.thinking;
                 speechBubble.setDots();
             }
@@ -53,15 +56,42 @@ public class workerHandler : MonoBehaviour {
 
     public void getMessage(tubeMessage m)
     {
+        msgHandler.setMessage(m);
         currMessage = m;
         speechBubble.setExclamation();
         currState = state.answering;
     }
     void checkMessage(tubeMessage m)
     {
+        tubeMessage.messageColor col = m.currUnstampedColor();
         if (m.currUnstampedColor() == answerColor)
         {
             m.stamp();
+            msgHandler.stamp();
+            speechBubble.setCheck();
+        }
+        else if(answerColor == tubeMessage.messageColor.br && (col == tubeMessage.messageColor.blue || col == tubeMessage.messageColor.red))
+        {
+            m.stamp();
+            msgHandler.stamp();
+            speechBubble.setCheck();
+        }
+        else if (answerColor == tubeMessage.messageColor.rg && (col == tubeMessage.messageColor.red || col == tubeMessage.messageColor.green))
+        {
+            m.stamp();
+            msgHandler.stamp();
+            speechBubble.setCheck();
+        }
+        else if (answerColor == tubeMessage.messageColor.ob && (col == tubeMessage.messageColor.orange || col == tubeMessage.messageColor.blue))
+        {
+            m.stamp();
+            msgHandler.stamp();
+            speechBubble.setCheck();
+        }
+        else if (answerColor == tubeMessage.messageColor.go && (col == tubeMessage.messageColor.green || col == tubeMessage.messageColor.orange))
+        {
+            m.stamp();
+            msgHandler.stamp();
             speechBubble.setCheck();
         }
         else

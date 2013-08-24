@@ -5,14 +5,16 @@ public class tubeManager : MonoBehaviour {
     public List<tubeMessage> allMessages = new List<tubeMessage>(); //allMessages tracks every message in the system, whether it's with a worker or not. 
     public List<deskTube> deskQueues = new List<deskTube>(9); //Deskqueues are in charge of exposing workers to messages
     public Queue<tubeMessage> exitQueue = new Queue<tubeMessage>(); //ExitQueue stores messages right before they are removed from the system.
-	// Use this for initialization
+    public Random r = new Random();
+    // Use this for initialization
 
 	void Start () {
-     
-        tubeMessage t = new tubeMessage(); //Test code to add some messages, comment out in end.
+     //Test code to add some messages, comment out in end.
 
         for (int i = 1; i < 10; i++)
         {
+
+            tubeMessage t = generateTube(Random.Range(1,4));
             addMessage(t);
         }
 	}
@@ -69,6 +71,15 @@ public class tubeManager : MonoBehaviour {
         }
     }
 
+    public tubeMessage generateTube(int colors)
+    {
+        List<tubeMessage.messageColor> colorList = new List<tubeMessage.messageColor>(colors);
+        for (int i = 0; i < colors; i++)
+        {
+            colorList.Add((tubeMessage.messageColor)Random.Range(0, 9));
+        }
+        return new tubeMessage(colorList);
+    }
 
    
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class messageIndicator : MonoBehaviour {
 
-    bool visible = true;
+    public bool visible = true;
     public bool stamped;
     public readonly Vector2 texScale = new Vector2(0.125f, 0.25f);
     private Vector2 offset;
@@ -17,9 +17,10 @@ public class messageIndicator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+
         if (visible)
         {
+            renderer.enabled = true;
             if (stamped)
             {
                 renderer.material.mainTextureOffset = offset + stampedOffset;
@@ -30,8 +31,11 @@ public class messageIndicator : MonoBehaviour {
                 renderer.material.mainTextureOffset = offset;
             }
         }
-              setMessage(stampColor);
-	}
+        else
+        {
+            renderer.enabled = false;
+        }
+    }
     public void setMessage(tubeMessage.messageColor col)
     {
         stampColor = col;

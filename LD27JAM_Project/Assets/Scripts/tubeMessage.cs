@@ -58,6 +58,10 @@ public class tubeMessage{
         return stamps;
     }
 
+    public List<messageColor> getColors()
+    {
+        return colorList;
+    }
 	public void UpdateTime (float deltaTime) {
         if (time > 0)
         {
