@@ -25,20 +25,25 @@ public class tubeManager : MonoBehaviour {
         {
             t.UpdateTime(Time.deltaTime);
         }
+        while (exitQueue.Count > 0)
+        {
+            //ExitQueue check routine for points happens here.
 
+            allMessages.Remove(exitQueue.Dequeue());
+        }
 	}
     void addMessage(tubeMessage t)
     {
         allMessages.Add(t); //Add a messageTube to the main list.
         deskQueues[4].Enqueue(t); //Send the tube to desk 5
     }
-    void moveTube(int from, int to)
+    public void moveTube(int from, int to)
     {
         if (from == to)
         {
-            Debug.Log("Doubled up move, canceling selection.");
+            Debug.Log("Doubled up move, check which message it is..");
         }
-        if (deskQueues[from - 1].Count() > 0)
+        else if (deskQueues[from - 1].Count() > 0) //Do a quick check to make sure the queue isn't empty.
         {
             tubeMessage t = deskQueues[from - 1].Dequeue();
 

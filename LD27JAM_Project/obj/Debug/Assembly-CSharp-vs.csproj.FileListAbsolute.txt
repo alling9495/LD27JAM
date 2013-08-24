@@ -1,0 +1,10 @@
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\obj\Debug\Assembly-CSharp.dll
+C:\Users\Kyle Piddington\Documents\LD27\LD27JAM_Project\obj\Debug\Assembly-CSharp.pdb
