@@ -14,7 +14,6 @@ public class tubeManager : MonoBehaviour {
         for (int i = 1; i < 10; i++)
         {
             addMessage(t);
-            moveTube(5, i);
         }
 	}
 

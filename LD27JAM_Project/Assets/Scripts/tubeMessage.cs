@@ -12,6 +12,7 @@ public class tubeMessage{
 
     public tubeMessage()
     {
+        colorList.Add(messageColor.red);
     }
     public tubeMessage(List<messageColor> colors)
     {
@@ -32,6 +33,7 @@ public class tubeMessage{
 
     public messageColor currUnstampedColor() 
     {
+        Debug.Log("Message has " + colorList.Count + "Colors.");
         if (stamps >= colorList.Count-1)
         {
             return colorList[colorList.Count - 1];
