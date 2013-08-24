@@ -1,13 +1,21 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class tubeMessage : MonoBehaviour {
+public class tubeMessage{
 
     public enum messageColor { red, green, orange, blue, rg, go, ob, br } // Colors avalible to the tubes. 
     private List<messageColor> colorList = new List<messageColor>();
     public int deskNum;
     private int stamps = 0;
     // Use this for initialization
+
+    public tubeMessage()
+    {
+    }
+    public tubeMessage(List<messageColor> colors)
+    {
+        setColors(colors);
+    }
 
 	void Start () {
 	    
@@ -17,11 +25,11 @@ public class tubeMessage : MonoBehaviour {
     {
         foreach (messageColor c in colors)
         {
-            colorList.Add(c);
+            colorList.Add(c); //Copy a list into the messages normal list.
         }
     }
 
-    public messageColor currUnstampedColor()
+    public messageColor currUnstampedColor() 
     {
         if (stamps >= colorList.Count-1)
         {
